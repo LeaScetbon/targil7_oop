@@ -23,8 +23,9 @@ public class Painting {
             Element containingElement = pathToElementMap.get(element.getPath());
             //TODO: add element as a child of containingElement
             if (containingElement instanceof Island){
-              ((Island) containingElement).addToIsland();
-        } else if (containingElement instanceof Lake) {
+                ((Island) containingElement).addToIsland();
+            }
+            else if (containingElement instanceof Lake) {
                 ((Lake) containingElement).addToLake();
             }
         }
@@ -33,6 +34,4 @@ public class Painting {
     public String getName() {
         return Painting.class.getSimpleName().toLowerCase();
     }
-
-
 }

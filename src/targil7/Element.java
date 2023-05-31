@@ -35,4 +35,8 @@ public abstract class Element{
 
     public abstract String getName();
     public abstract Habitat getHabitat();
+    public abstract void accept(ElementCountVisitor elementCountVisitor);
+    public abstract void accept(ShortPrintVisitor shortPrintVisitor);
+    public abstract void accept(TotalAreaVisitor totalAreaVisitor);
+    public abstract void accept(LongPrintVisitor longPrintVisitor);
 }

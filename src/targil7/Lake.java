@@ -4,20 +4,22 @@ import java.util.ArrayList;
 
 public class Lake extends Element {
     private String name;
-    private ArrayList<Element> elements;
+    private ArrayList<Element> itsElements;
     public Lake(String name, double diameter, String path) {
         //TODO: fix
         super(diameter, diameter, path);
-        //String lake_name = name;//Comment envoyer name à getName() ?
-        //super(0,0,null);
         this.name = name;
-        this.elements = new ArrayList<>();
+        itsElements = new ArrayList<>();
+    }
+
+    public void addToLake(){
+        itsElements.add(this);
     }
 
     @Override
     public String getName() {
         //TODO: fix
-        return this.name;
+        return name;
     }
 
     @Override
@@ -25,7 +27,35 @@ public class Lake extends Element {
         return Habitat.TERRESTRIAL;
     }
 
-    public void addToLake(){
-        elements.add(this);
+    @Override
+    public void accept(ElementCountVisitor elementCountVisitor) {
+        for (Element element : itsElements){
+            element.accept(elementCountVisitor);
+        }
+        elementCountVisitor.visit(this);
+    }
+
+    @Override
+    public void accept(ShortPrintVisitor shortPrintVisitor) {
+        for (Element element : itsElements){
+            element.accept(shortPrintVisitor);
+        }
+        shortPrintVisitor.visit(this);
+    }
+
+    @Override
+    public void accept(TotalAreaVisitor totalAreaVisitor) {
+        for (Element element : itsElements){
+            element.accept(totalAreaVisitor);
+        }
+        totalAreaVisitor.visit(this);
+    }
+
+    @Override
+    public void accept(LongPrintVisitor longPrintVisitor) {
+        longPrintVisitor.visit(this);
+        for (Element element : itsElements){
+            element.accept(longPrintVisitor);
+        }
     }
 }

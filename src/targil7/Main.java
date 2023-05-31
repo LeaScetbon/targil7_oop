@@ -50,22 +50,38 @@ public class Main {
             switch (myString) {
                 case "c":
                     //TODO: Add counting behavior
+                    for(Element element : root.elementList){
+                        ElementCount countVisitor = new ElementCount();
+                        element.accept(countVisitor);
+                        System.out.println("The elements' count of the element " + element.getName() + " is " + countVisitor.getElementsCount());
+                    }
                     break;
                 case "sh":
                     //TODO: Add short representation behavior
+                    for(Element element : root.elementList){
+                        ShortPrint shortPrintVisitor = new ShortPrint();
+                        element.accept(shortPrintVisitor);
+                    }
                     break;
                 case "ta":
                     //TODO: Add area calculation behavior
+                    for(Element element : root.elementList){
+                        TotalArea areaVisitor = new TotalArea();
+                        element.accept(areaVisitor);
+                        System.out.println("The total area of the element " + element.getName() + " is " + areaVisitor.getTotalArea());
+                    }
                     break;
                 case "lp":
                     //TODO: Add long representation behavior
+                    for(Element element : root.elementList){
+                        LongPrint longPrintVisitor = new LongPrint();
+                        element.accept(longPrintVisitor);
+                    }
                     break;
-
-
             }
-
         }
     }
+
 
     public static void paperMenu(Scanner scanner){
         System.out.println("Choose from the following paper:\n" +

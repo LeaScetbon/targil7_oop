@@ -29,4 +29,24 @@ public class Flag extends Element {
     public Habitat getHabitat() {
         return Habitat.TERRESTRIAL;
     }
+
+    @Override
+    public void accept(ElementCountVisitor elementCountVisitor) {
+        elementCountVisitor.visit(this);
+    }
+
+    @Override
+    public void accept(ShortPrintVisitor shortPrintVisitor) {
+        shortPrintVisitor.visit(this);
+    }
+
+    @Override
+    public void accept(TotalAreaVisitor totalAreaVisitor) {
+        totalAreaVisitor.visit(this);
+    }
+
+    @Override
+    public void accept(LongPrintVisitor longPrintVisitor) {
+        longPrintVisitor.visit(this);
+    }
 }
