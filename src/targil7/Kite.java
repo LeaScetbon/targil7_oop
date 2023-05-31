@@ -1,3 +1,5 @@
+package targil7;
+
 import targil7.Color;
 
 public class Kite extends Element {
@@ -8,10 +10,9 @@ public class Kite extends Element {
         this.color = color;
     }
 
-     public Color getColor() {
+    public Color getColor() {
         return color;
     }
-
     public void setColor(Color color) {
         this.color = color;
     }

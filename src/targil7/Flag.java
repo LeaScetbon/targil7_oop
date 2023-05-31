@@ -1,3 +1,5 @@
+package targil7;
+
 import targil7.Color;
 
 public class Flag extends Element {
@@ -10,12 +12,10 @@ public class Flag extends Element {
         this.color = color;
         this.carrierHeight = carrierHeight;
     }
-
  
     public Color getColor() {
         return color;
     }
-
     public int getCarrierHeight() {
         return carrierHeight;
     }

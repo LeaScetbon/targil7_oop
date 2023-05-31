@@ -1,4 +1,4 @@
- 
+package targil7;
 
 public class PaperFactory {
     public static Paper createPaper(String code){

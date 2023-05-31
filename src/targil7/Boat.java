@@ -1,4 +1,4 @@
- 
+package targil7;
 
 public class Boat extends Element{
     Material material;
@@ -10,7 +10,6 @@ public class Boat extends Element{
     public Material getMaterial() {
         return material;
     }
-
     public String getName() {
         return "boat";
     }

@@ -1,6 +1,8 @@
+package targil7;
 // TODO: Implement Composite (change this file).
  
 public class Island extends Element {
+
     public Island(String name, double diameter, String path) {
         //TODO: fix
         super(0,0,null);

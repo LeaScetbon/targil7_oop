@@ -1,4 +1,4 @@
- 
+package targil7;
 
 public class Book implements Paper{
     @Override

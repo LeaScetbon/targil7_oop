@@ -1,3 +1,5 @@
+package targil7;
+
 import targil7.Color;
 
 public class Kid extends Element {
@@ -9,12 +11,10 @@ public class Kid extends Element {
         this.birthYear = birthYear;
         this.hairColor = hairColor;
     }
-
  
     public int getBirthYear() {
         return birthYear;
     }
-
     public Color getHairColor() {
         return hairColor;
     }

@@ -8,10 +8,12 @@ import java.util.Map;
 public class Painting {
     Map<String, Element> pathToElementMap;
     List<Element> elementList;
+
     Painting(){
         elementList=new ArrayList<>();
         pathToElementMap = new HashMap<>();
     }
+
     public void addElement(Element element){
         pathToElementMap.put(element.getFullName(), element);
         if (element.getPath().isEmpty()){
@@ -26,6 +28,4 @@ public class Painting {
     public String getName() {
         return Painting.class.getSimpleName().toLowerCase();
     }
-
-
 }

@@ -1,8 +1,12 @@
- 
+package targil7;
+
 public class Lake extends Element {
+
     public Lake(String name, double diameter, String path) {
         //TODO: fix
-        super(0,0,null);
+        super(diameter, diameter, path);
+        String lake_name = name;//Comment envoyer name à getName() ?
+        //super(0,0,null);
     }
 
     @Override

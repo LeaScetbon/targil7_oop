@@ -1,4 +1,4 @@
- 
+package targil7;
 
 import targil7.Color;
 
