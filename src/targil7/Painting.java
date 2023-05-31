@@ -22,10 +22,17 @@ public class Painting {
         else {
             Element containingElement = pathToElementMap.get(element.getPath());
             //TODO: add element as a child of containingElement
+            if (containingElement instanceof Island){
+              ((Island) containingElement).addToIsland();
+        } else if (containingElement instanceof Lake) {
+                ((Lake) containingElement).addToLake();
+            }
         }
     }
 
     public String getName() {
         return Painting.class.getSimpleName().toLowerCase();
     }
+
+
 }
