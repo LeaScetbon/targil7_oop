@@ -27,7 +27,7 @@ public class TotalArea implements TotalAreaVisitor{
 
     @Override
     public void visit(Flag flag) {
-        totalArea += (int) (flag.getLength() * flag.getWidth());
+        //totalArea += (int) (flag.getLength() * flag.getWidth());
     }
 
     @Override
