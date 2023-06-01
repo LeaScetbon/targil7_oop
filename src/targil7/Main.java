@@ -71,7 +71,7 @@ public class Main {
                     for (Element element : root.elementList) {
                         element.accept(totalAreaVisitor);
                     }
-                    System.out.println(totalAreaVisitor.getTotalArea());
+                    System.out.println((int)totalAreaVisitor.getTotalArea());
                     break;
                 case "lp":
                     //TODO: Add long representation behavior
