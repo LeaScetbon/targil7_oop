@@ -53,7 +53,10 @@ public class Main {
                     for(Element element : root.elementList){
                         ElementCount countVisitor = new ElementCount();
                         element.accept(countVisitor);
-                        System.out.println("The elements' count of the element " + element.getName() + " is " + countVisitor.getElementsCount());
+                        int count = countVisitor.getElementsCount();
+                        if(count > 1) {
+                            System.out.println(count);
+                        }
                     }
                     break;
                 case "sh":
