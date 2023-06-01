@@ -9,12 +9,16 @@ public class TotalArea implements TotalAreaVisitor{
 
     @Override
     public void visit(Island island) {
-        totalArea += (int) Math.PI * Math.pow(island.getLength() / 2,2);
+        int area = (int) (Math.PI * Math.pow(island.getLength() / 2,2));
+        System.out.println(island.getName() + " area is " + area);
+        totalArea += area;
     }
 
     @Override
     public void visit(Lake lake) {
-        totalArea += (int) Math.PI * Math.pow(lake.getLength() / 2,2);
+        int area = (int) (Math.PI * Math.pow(lake.getLength() / 2,2));
+        System.out.println(lake.getName() + " area is " + area);
+        totalArea += area;
     }
 
     @Override
@@ -22,12 +26,16 @@ public class TotalArea implements TotalAreaVisitor{
         double circleRadius = boat.getWidth() /2;
         double semiCircleArea = (Math.PI * Math.pow(circleRadius,2) / 2);
         double rectangleArea = (boat.getWidth() * (boat.getLength() - circleRadius));
-        totalArea += (int) (semiCircleArea + rectangleArea);
+        int area = (int) (semiCircleArea + rectangleArea);
+        System.out.println(boat.getName() + " area is " + area);
+        totalArea += area;
     }
 
     @Override
     public void visit(Flag flag) {
-        totalArea += (int) (flag.getLength() * flag.getWidth());
+        int area = (int) (flag.getLength() * flag.getWidth());
+        System.out.println(flag.getName() + " area is " + area);
+        totalArea += area;
     }
 
     @Override
@@ -35,7 +43,9 @@ public class TotalArea implements TotalAreaVisitor{
         double circleRadius = kid.getWidth() /2;
         double circleArea = (Math.PI * Math.pow(circleRadius,2));
         double rectangleArea = (kid.getWidth() * (kid.getLength() - (circleRadius * 2)));
-        totalArea += (int) (circleArea + rectangleArea);
+        int area = (int) (circleArea + rectangleArea);
+        System.out.println(kid.getName() + " area is " + area);
+        totalArea += area;
     }
 
     @Override
@@ -43,11 +53,15 @@ public class TotalArea implements TotalAreaVisitor{
         double rectangleWidth = (tree.getWidth() / 2);
         double rectangleArea = (rectangleWidth * (tree.getLength() / 2));
         double triangleArea = ((tree.getWidth() * (tree.getLength() / 2)) / 2);
-        totalArea += (int) (rectangleArea + triangleArea);
+        int area = (int) (rectangleArea + triangleArea);
+        System.out.println(tree.getName() + " area is " + area);
+        totalArea += area;
     }
 
     @Override
     public void visit(Kite kite) {
-        totalArea += (int) (kite.getLength() * kite.getWidth() / 2);
+        int area = (int) (kite.getLength() * kite.getWidth() / 2);
+        System.out.println(kite.getName() + " area is " + area);
+        totalArea += area;
     }
 }
