@@ -23,11 +23,10 @@ public class Painting {
             Element containingElement = pathToElementMap.get(element.getPath());
             //TODO: add element as a child of containingElement
             if (containingElement instanceof Island){
-                ((Island) containingElement).addToIsland();
+                ((Island) containingElement).addToIsland(element);
             }
             else if (containingElement instanceof Lake) {
-                ((Lake) containingElement).addToLake();
-            }
+                ((Lake) containingElement).addToLake(element);}
         }
     }
 

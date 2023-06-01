@@ -12,8 +12,8 @@ public class Lake extends Element {
         itsElements = new ArrayList<>();
     }
 
-    public void addToLake(){
-        itsElements.add(this);
+    public void addToLake(Element element){
+        itsElements.add(element);
     }
 
     @Override

@@ -14,8 +14,8 @@ public class Island extends Element {
         itsElements = new ArrayList<>();
     }
 
-    public void addToIsland(){
-        itsElements.add(this);
+    public void addToIsland(Element element){
+        itsElements.add(element);
     }
 
     public ArrayList<Element> getItsElements() {
