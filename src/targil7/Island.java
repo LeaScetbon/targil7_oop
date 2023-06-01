@@ -43,10 +43,10 @@ public class Island extends Element {
 
     @Override
     public void accept(ShortPrintVisitor shortPrintVisitor) {
+        shortPrintVisitor.visit(this);
         for (Element element : itsElements){
             element.accept(shortPrintVisitor);
         }
-        shortPrintVisitor.visit(this);
     }
 
     @Override

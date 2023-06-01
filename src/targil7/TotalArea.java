@@ -19,31 +19,31 @@ public class TotalArea implements TotalAreaVisitor{
 
     @Override
     public void visit(Boat boat) {
-        int circleRadius = (int) boat.getWidth() /2;
-        int semiCircleArea = (int) (Math.PI * Math.pow(circleRadius,2) / 2);
-        int rectangleArea = (int) (boat.getWidth() * (boat.getLength() - circleRadius));
-        totalArea += (semiCircleArea + rectangleArea);
+        double circleRadius = boat.getWidth() /2;
+        double semiCircleArea = (Math.PI * Math.pow(circleRadius,2) / 2);
+        double rectangleArea = (boat.getWidth() * (boat.getLength() - circleRadius));
+        totalArea += (int) (semiCircleArea + rectangleArea);
     }
 
     @Override
     public void visit(Flag flag) {
-        //totalArea += (int) (flag.getLength() * flag.getWidth());
+        totalArea += (int) (flag.getLength() * flag.getWidth());
     }
 
     @Override
     public void visit(Kid kid) {
-        int circleRadius = (int) kid.getWidth() /2;
-        int circleArea = (int) (Math.PI * Math.pow(circleRadius,2));
-        int rectangleArea = (int) (kid.getWidth() * (kid.getLength() - (circleRadius * 2)));
-        totalArea += (circleArea + rectangleArea);
+        double circleRadius = kid.getWidth() /2;
+        double circleArea = (Math.PI * Math.pow(circleRadius,2));
+        double rectangleArea = (kid.getWidth() * (kid.getLength() - (circleRadius * 2)));
+        totalArea += (int) (circleArea + rectangleArea);
     }
 
     @Override
     public void visit(Tree tree) {
-        int rectangleWidth = (int) (tree.getWidth() / 2);
-        int rectangleArea = (int) (rectangleWidth * (tree.getLength() / 2));
-        int triangleArea = (int) ((tree.getWidth() * (tree.getLength() / 2)) / 2);
-        totalArea += (rectangleArea + triangleArea);
+        double rectangleWidth = (tree.getWidth() / 2);
+        double rectangleArea = (rectangleWidth * (tree.getLength() / 2));
+        double triangleArea = ((tree.getWidth() * (tree.getLength() / 2)) / 2);
+        totalArea += (int) (rectangleArea + triangleArea);
     }
 
     @Override

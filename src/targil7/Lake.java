@@ -16,6 +16,10 @@ public class Lake extends Element {
         itsElements.add(element);
     }
 
+    public ArrayList<Element> getItsElements() {
+        return itsElements;
+    }
+
     @Override
     public String getName() {
         //TODO: fix
@@ -37,10 +41,10 @@ public class Lake extends Element {
 
     @Override
     public void accept(ShortPrintVisitor shortPrintVisitor) {
+        shortPrintVisitor.visit(this);
         for (Element element : itsElements){
             element.accept(shortPrintVisitor);
         }
-        shortPrintVisitor.visit(this);
     }
 
     @Override

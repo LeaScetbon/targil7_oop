@@ -22,11 +22,15 @@ public class Painting {
         else {
             Element containingElement = pathToElementMap.get(element.getPath());
             //TODO: add element as a child of containingElement
-            if (containingElement instanceof Island){
+            if (containingElement instanceof Island && (element instanceof Tree ||element instanceof Kid ||element instanceof Kite )){
                 ((Island) containingElement).addToIsland(element);
             }
-            else if (containingElement instanceof Lake) {
-                ((Lake) containingElement).addToLake(element);}
+            else if (containingElement instanceof Lake && (element instanceof Boat ||  element instanceof Island)) {
+                ((Lake) containingElement).addToLake(element);
+            }
+            else{
+                System.out.println(containingElement.getName() + " cannot contain " + element.getName());
+            }
         }
     }
 

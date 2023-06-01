@@ -50,34 +50,28 @@ public class Main {
             switch (myString) {
                 case "c":
                     //TODO: Add counting behavior
+                    int count = 0;
                     for(Element element : root.elementList){
                         ElementCount countVisitor = new ElementCount();
                         element.accept(countVisitor);
-                        int count = countVisitor.getElementsCount();
-                        if(count > 1) {
-                            System.out.println(count);
-                        }
+                        count += countVisitor.getElementsCount();
                     }
+                    System.out.println(count);
                     break;
                 case "sh":
                     //TODO: Add short representation behavior
                     ShortPrint shortPrintVisitor = new ShortPrint();
                     for(Element element : root.elementList){
-
                         element.accept(shortPrintVisitor);
                     }
                     break;
                 case "ta":
                     //TODO: Add area calculation behavior
                     TotalArea totalAreaVisitor = new TotalArea();
-
-
                     for (Element element : root.elementList) {
                         element.accept(totalAreaVisitor);
                     }
-
-
-                    System.out.println( totalAreaVisitor.getTotalArea());
+                    System.out.println(totalAreaVisitor.getTotalArea());
                     break;
                 case "lp":
                     //TODO: Add long representation behavior
@@ -85,6 +79,7 @@ public class Main {
                     for (Element element : root.elementList) {
                         element.accept(longPrintVisitor);
                     }
+                    System.out.println();
                     break;
             }
         }
