@@ -1,38 +1,42 @@
 package targil7;
+public class ShortPrint implements ShortPrintVisitor {
 
-public class ShortPrint implements ShortPrintVisitor{
+
+
     @Override
     public void visit(Island island) {
-        System.out.println("The name of the element is " + island.getName());
+        System.out.println( island.getName());
     }
 
     @Override
     public void visit(Lake lake) {
-        System.out.println("The name of the element is " + lake.getName());
+        System.out.println( lake.getName());
     }
 
     @Override
     public void visit(Boat boat) {
-        System.out.println("The name of the element is " + boat.getName());
+        System.out.println( boat.getName());
     }
 
     @Override
     public void visit(Flag flag) {
-        System.out.println("The name of the element is " + flag.getName());
+        System.out.println(flag.getName());
     }
 
     @Override
     public void visit(Kid kid) {
-        System.out.println("The name of the element is " + kid.getName());
+        System.out.println(kid.getName());
     }
 
     @Override
     public void visit(Tree tree) {
-        System.out.println("The name of the element is " + tree.getName());
+        System.out.println(tree.getName());
     }
 
     @Override
     public void visit(Kite kite) {
-        System.out.println("The name of the element is " + kite.getName());
+        System.out.println(kite.getName());
     }
+
+
 }

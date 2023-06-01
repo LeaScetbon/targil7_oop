@@ -4,6 +4,7 @@ import targil7.Color;
 
 public class Kid extends Element {
     private int birthYear;
+    private int year = 2023;
     private Color hairColor;
 
     public Kid(double width, double height, int birthYear, Color hairColor, String path) {
@@ -15,6 +16,11 @@ public class Kid extends Element {
     public int getBirthYear() {
         return birthYear;
     }
+
+    public  int getAge(){
+        return year - birthYear;
+    }
+
     public Color getHairColor() {
         return hairColor;
     }

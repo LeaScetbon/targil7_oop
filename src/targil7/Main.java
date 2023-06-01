@@ -61,23 +61,28 @@ public class Main {
                     break;
                 case "sh":
                     //TODO: Add short representation behavior
+                    ShortPrint shortPrintVisitor = new ShortPrint();
                     for(Element element : root.elementList){
-                        ShortPrint shortPrintVisitor = new ShortPrint();
+
                         element.accept(shortPrintVisitor);
                     }
                     break;
                 case "ta":
                     //TODO: Add area calculation behavior
-                    for(Element element : root.elementList){
-                        TotalArea areaVisitor = new TotalArea();
-                        element.accept(areaVisitor);
-                        System.out.println("The total area of the element " + element.getName() + " is " + areaVisitor.getTotalArea());
+                    TotalArea totalAreaVisitor = new TotalArea();
+
+
+                    for (Element element : root.elementList) {
+                        element.accept(totalAreaVisitor);
                     }
+
+
+                    System.out.println( totalAreaVisitor.getTotalArea());
                     break;
                 case "lp":
                     //TODO: Add long representation behavior
-                    for(Element element : root.elementList){
-                        LongPrint longPrintVisitor = new LongPrint();
+                    LongPrintVisitor longPrintVisitor = new LongPrint();
+                    for (Element element : root.elementList) {
                         element.accept(longPrintVisitor);
                     }
                     break;

@@ -3,19 +3,18 @@ package targil7;
 public class LongPrint implements LongPrintVisitor{
     @Override
     public void visit(Island island) {
-        if(island.getItsElements().isEmpty())
-        {
+        if (island.getItsElements().isEmpty()) {
             System.out.print("An empty island named " + island.getName() + ". ");
-        }
-        else {
+        } else {
             System.out.print("An island named " + island.getName() + " containing: ");
         }
     }
 
     @Override
     public void visit(Lake lake) {
-        System.out.print("An lake named " + lake.getName() + " containing: ");
+        System.out.print("A lake named " + lake.getName() + " containing: ");
     }
+
 
     @Override
     public void visit(Boat boat) {
@@ -24,12 +23,12 @@ public class LongPrint implements LongPrintVisitor{
 
     @Override
     public void visit(Flag flag) {
-        System.out.print("A " + flag.getColor() + " flag high of " + flag.getCarrierHeight());
+       // System.out.print("A " + flag.getColor() + " flag high of " + flag.getCarrierHeight() + " ");
     }
 
     @Override
     public void visit(Kid kid) {
-        System.out.print("A " + kid.getBirthYear() + " year old kid with " + kid.getHairColor() + " hair. ");
+        System.out.print("A " + kid.getAge()+ " year old kid with " + kid.getHairColor() + " hair. ");
     }
 
     @Override
