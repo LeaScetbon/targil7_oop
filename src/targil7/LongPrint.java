@@ -29,7 +29,7 @@ public class LongPrint implements LongPrintVisitor{
 
     @Override
     public void visit(Flag flag) {
-        System.out.print("A " + flag.getColor().toString().toLowerCase() + " flag high of " + flag.getCarrierHeight() + ". ");
+        System.out.print("A flag with color: " + flag.getColor().toString().toLowerCase() + " of height " + flag.getCarrierHeight() + ". ");
     }
 
     @Override

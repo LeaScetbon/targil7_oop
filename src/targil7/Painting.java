@@ -28,7 +28,7 @@ public class Painting {
             else if (containingElement instanceof Island){
                 ((Island) containingElement).addToIsland(element);
             }
-            else if (containingElement instanceof Lake ) {
+            else if (containingElement instanceof Lake) {
                 ((Lake) containingElement).addToLake(element);
             }
         }
