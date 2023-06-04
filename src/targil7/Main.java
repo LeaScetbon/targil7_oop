@@ -93,35 +93,45 @@ public class Main {
                 "jr: journal article\n" +
                 "bk: book");
         // TODO: Add a Paper Factory and use it to create a Paper
+        String choice = scanner.nextLine();
         PaperFactory paperFactory = new PaperFactory();
-        Paper paper = null;
-        String choice = "";
+        Paper paper = paperFactory.createPaper(choice);
         while (!choice.equals("s")) {
             System.out.println("Choose from the following options:\n" +
                     "a: add element\n" +
                     "s: submit");
             choice = scanner.nextLine();
             if (choice.equals("a")) {
-                paper = paperElementMenu(scanner, paperFactory, paper);
+                paper = paperElementMenu(scanner, paper);
             }
             if (choice.equals("s")) {
                 System.out.println(paper.write());
             }
-
         }
-
     }
 
-    public static Paper paperElementMenu(Scanner scanner, PaperFactory paperFactory, Paper paper) {
+    public static Paper paperElementMenu(Scanner scanner, Paper paper) {
         System.out.println("Choose from the following elements:\n" +
                 "tb: table\n" +
                 "eq: equation\n" +
                 "d: diagram\n" +
                 "nt: note");
         String choice = scanner.nextLine();
-        paper = paperFactory.createPaper(choice);
-
-
+        // TODO: Use a Paper-Element Factory to create a decorated Hamburger
+        switch (choice){
+            case "tb":
+                paper = new TablePaperDeco(paper);
+                break;
+            case "eq":
+                paper = new EquationPaperDeco(paper);
+                break;
+            case "d":
+                paper = new DiagramPaperDeco(paper);
+                break;
+            case "nt":
+                paper = new NotePaperDeco(paper);
+                break;
+        }
         return paper;
     }
 }

@@ -2,6 +2,7 @@ package targil7;
 import java.util.Scanner;
 public class PaperFactory {
     Scanner scanner = new Scanner(System.in);
+
     public static Paper createPaper(String code){
         //TODO: fix
         switch(code){
@@ -16,6 +17,5 @@ public class PaperFactory {
             default:
                 throw new RuntimeException("wrong PaperType");
         }
-
     }
 }
